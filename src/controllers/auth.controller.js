@@ -24,7 +24,7 @@ const generarToken = (usuario) => {
 const register = async(req, res)=> {
     try {
         const { nombres, email, password, rol } = req.body;
-        if (nombres || email || !password) {
+        if (!nombres || !email || !password) {
             return res.status(400).json({
                 ok: false,
                 mensaje: 'Nombres, correo y clave son obligatorios'
@@ -89,7 +89,7 @@ const login = async (req, res) =>{
 
         // Validación del usuario
         if (!usuario) {
-            return res.status(400).json({
+            return res.status(401).json({
                 ok: false,
                 mensaje: 'Credenciales inválidas.'
             });
@@ -120,10 +120,10 @@ const login = async (req, res) =>{
             ok: true,
             mensaje: 'Inicio de sesión correcto.',
             data: {
-                id: nuevoUsuario.id,
-                nombres: nuevoUsuario.nombres,
-                email: nuevoUsuario.email,
-                rol: nuevoUsuario.rol,
+                id: usuario.id,
+                nombres: usuario.nombres,
+                email: usuario.email,
+                rol: usuario.rol,
                 token
             }
         });

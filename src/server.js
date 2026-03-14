@@ -7,7 +7,7 @@ const app = require('./app');
 const db = require('./models');
 const PORT = process.env.PORT || 3000;
 
-const iniciarServidor = aysnc ()=> {
+const iniciarServidor = async ()=> {
     try {
         await db.sequelize.authenticate();
         console.log('Conexión a la base de datos exitosa.');
