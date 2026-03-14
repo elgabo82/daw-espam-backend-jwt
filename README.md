@@ -3,7 +3,8 @@
 ### Módulos
 
 * express
-* mysql2 sequelize
+* mysql2 
+* sequelize
 * cors
 * dotenv
 * jsonwebtoken
