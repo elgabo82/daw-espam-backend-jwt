@@ -10,7 +10,7 @@
 * jsonwebtoken
 * bcryptjs
 
-## Uso del respositorio
+## Uso del repositorio
 
 ```bash
 npm i express mysql2 sequelize cors dotenv jsonwebtoken bcryptjs
